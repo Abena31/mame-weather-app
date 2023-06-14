@@ -39,12 +39,15 @@ li:first-letter {
   text-transform: capitalize;
 }
 
-.container {
-  border: 1px solid #6495ed;
-  padding: 18px;
-  border-radius: 30px;
+.weather-app-cover {
   max-width: 600px;
   margin: 30px auto;
+}
+
+.weather-app {
+  border: 1px solid #6495ed;
+  padding: 20px;
+  border-radius: 30px;
 }
 
 .overview {
