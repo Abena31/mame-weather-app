@@ -51,13 +51,13 @@ li:first-letter {
 }
 
 .overview {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .weather-temperature img {
   margin-right: 10px;
-  height: 65px;
-  width: 65px;
+  height: 64px;
+  width: 64px;
 }
 
 .weather-temperature strong {
