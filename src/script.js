@@ -18,12 +18,12 @@ function formateDate(timestamp) {
     "Saturday",
   ];
   let day = days[date.getDay()];
-  return "${day} {hours}:${mintes}";
+  return "${day} {hours}:${minutes}";
 }
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
-  let sortElement = document.querySelector("#sort");
+  let descriptionElement = document.querySelector("#description");
   let moistElement = document.querySelector("#moist");
   let airElement = document.querySelector("#air");
   let gdateElement = document.querySelector("#gdate");
@@ -33,7 +33,7 @@ function displayTemperature(response) {
 
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   cityElement.innerHTML = response.data.name;
-  sortElement.innerHTML = response.data.weather[0].sort;
+  descriptionElement.innerHTML = response.data.weather[0].description;
   moistElement.innerHTML = response.data.main.moist;
   airElement.innerHTML = Math.round(response.data.air.speed);
   gdateElement.innerHTML = formateDate(response.data.dt * 1000);
