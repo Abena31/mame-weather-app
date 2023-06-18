@@ -1,11 +1,11 @@
 function formateDate(timestamp) {
   let date = new Date(timestamp);
   let hours = timestamp.getHours();
-  if (hours < 11) {
+  if (hours < 10) {
     hours = "0${hours}";
   }
   let minutes = date.getMinutes();
-  if (minutes < 11) {
+  if (minutes < 10) {
     minutes = "0${mintues}";
   }
   let days = [
@@ -17,6 +17,7 @@ function formateDate(timestamp) {
     "Friday",
     "Saturday",
   ];
+
   let day = days[date.getDay()];
   return "${day} ${hours}:${minutes}";
 }
