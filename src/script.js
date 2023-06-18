@@ -39,7 +39,7 @@ function displayCast(response) {
 let days=["Thu","Fri","Sat","Sun"];
 
  let castHTML = '<div class="row">';
- days.forEach(function(castDay){
+ days.forEach(function(castDay, index){
 })
  castHTML=
   castHTML+
@@ -47,14 +47,16 @@ let days=["Thu","Fri","Sat","Sun"];
 <div class="col-2">
     <div class="forcast-date">${formatDay
         (castDay.dt)}</div>
+        {index}
     <img 
-    src="http://openweathermap.org/img/wn/${castDay.weather.[0].icon}@2x.png"
+    src="http://openweathermap.org/img/wn/${castDay.weather.[0].icon
+}@2x.png"
      alt="" 
-     width="43" 
+     width="42" 
      />
     <div class="forcast-temperature">
-      <span class="forcast-temperature-maxi"> ${castDay.temp.max}° </span>
-      <span class="forcast-temperature-mini">${castDay.temp.min}° </span>
+      <span class="forcast-temperature-maxi"> ${Math.round (castDay.temp.max)}° </span>
+      <span class="forcast-temperature-mini">${Math.round(castDay.temp.min)}° </span>
     </div>
   </div>
 ';
