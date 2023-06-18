@@ -1,5 +1,11 @@
 body {
   font-family: Arial, sans-serif;
+  background: linear-gradient(
+    93.1deg,
+    rgb(238, 254, 183) 19.1%,
+    rgb(169, 254, 222) 53.9%,
+    rgb(90, 222, 255) 92%
+  );
 }
 
 h1 {
