@@ -47,7 +47,7 @@ let days=["Thu","Fri","Sat","Sun"];
 <div class="col-2">
     <div class="forcast-date">${formatDay
         (castDay.dt)}</div>
-        {index}
+        ${index}
     <img 
     src="http://openweathermap.org/img/wn/${castDay.weather.[0].icon
 }@2x.png"
