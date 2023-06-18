@@ -24,18 +24,35 @@ function formateDate(timestamp) {
 
 function displayCast() {
  let castElement = document.querySelector("#cast");
-castElement.innerHTML='
-<div class ="row">
+
+ let castHTML = '<div class=row>';
+ castHTML=
+ castHTML+
+ '
   <div class="col-2">
     <div class="forcast-date">Thu</div>
-    <img src="http:openweathermap.org/img/wn/50d@2x.png" alt="" width="43" />
+    <img src="http://openweathermap.org/img/wn/50d@2x.png" alt="" width="43" />
     <div class="forcast-temperature">
-      <span class="forcast-maxi"> 18° </span>
-      <span class="forcast-mini">12° </span>
+      <span class="forcast-temperature-maxi"> 18° </span>
+      <span class="forcast-temperature-mini">12° </span>
     </div>
   </div>
-</div>
 ';
+ castHTML=
+ castHTML +
+ '
+<div class="col-2">
+    <div class="forcast-date">Thu</div>
+    <img src="http://openweathermap.org/img/wn/50d@2x.png" alt="" width="43" />
+    <div class="forcast-temperature">
+      <span class="forcast-temperature-maxi"> 18° </span>
+      <span class="forcast-temperature-mini">12° </span>
+    </div>
+  </div>
+';
+ castHTML= castHTML+'</div>';
+castElement.innerHTML=castHTML;
+ 
 }
 
 function displayTemperature(response) {
