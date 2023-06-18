@@ -39,8 +39,8 @@ function displayCast(response) {
 let days=["Thu","Fri","Sat","Sun"];
 
  let castHTML = '<div class="row">';
- days.forEach(function(castDay, index){
-})
+ days.forEach(function(castDay, index) {
+if (index<6){ 
  castHTML=
   castHTML+
  '
@@ -60,7 +60,8 @@ let days=["Thu","Fri","Sat","Sun"];
     </div>
   </div>
 ';
-
+}
+})
 castHTML= castHTML+'</div>';
 castElement.innerHTML=castHTML;
  
