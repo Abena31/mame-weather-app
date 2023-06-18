@@ -22,30 +22,44 @@ function formateDate(timestamp) {
   return "${day} ${hours}:${minutes}";
 }
 
+function formatDay(timestamp){
+    let date = new Date(timestamp * 1000);
+    let day = date.getDay();
+    let days=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+
+    return days[day];
+
+}
+
 function displayCast(response) {
+ let cast = response.data.daily;
+
  let castElement = document.querySelector("#cast");
 
 let days=["Thu","Fri","Sat","Sun"];
 
  let castHTML = '<div class="row">';
- days.forEach(function(day){
+ days.forEach(function(castDay){
 })
  castHTML=
   castHTML+
  '
 <div class="col-2">
-    <div class="forcast-date">${day}</div>
-    <img src="http://openweathermap.org/img/wn/50d@2x.png"
+    <div class="forcast-date">${formatDay
+        (castDay.dt)}</div>
+    <img 
+    src="http://openweathermap.org/img/wn/${castDay.weather.[0].icon}@2x.png"
      alt="" 
      width="43" 
      />
     <div class="forcast-temperature">
-      <span class="forcast-temperature-maxi"> 18° </span>
-      <span class="forcast-temperature-mini">12° </span>
+      <span class="forcast-temperature-maxi"> ${castDay.temp.max}° </span>
+      <span class="forcast-temperature-mini">${castDay.temp.min}° </span>
     </div>
   </div>
 ';
- castHTML= castHTML+'</div>';
+
+castHTML= castHTML+'</div>';
 castElement.innerHTML=castHTML;
  
 }
