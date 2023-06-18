@@ -22,14 +22,16 @@ function formateDate(timestamp) {
   return "${day} ${hours}:${minutes}";
 }
 
-function displayCast() {
+function displayCast(response) {
  let castElement = document.querySelector("#cast");
 
+let days=["Thu","Fri","Sat","Sun"];
+
  let castHTML = '<div class="row">';
- let days=["Thu","Fri","Sat","Sun"];
  days.forEach(function(day){
 })
- castHTML= castHTML+
+ castHTML=
+  castHTML+
  '
 <div class="col-2">
     <div class="forcast-date">${day}</div>
@@ -46,6 +48,11 @@ function displayCast() {
  castHTML= castHTML+'</div>';
 castElement.innerHTML=castHTML;
  
+}
+function getCast(coordinates) {
+let apiKey = "79e8e44340f805883833d9a47487d24b";
+let apiUrl ='https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apikey}&units=metric';
+ axios.get(apiUrl).then(displayCast);
 }
 
 function displayTemperature(response) {
@@ -72,8 +79,9 @@ function displayTemperature(response) {
     "http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png"
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+   
+  getCast(response.data.coord);
 }
-
 function search(city) {
   let apiKey = "79e8e44340f805883833d9a47487d24b";
   let apiUrl =
