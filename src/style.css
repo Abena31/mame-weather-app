@@ -75,4 +75,17 @@ li:first-letter {
 .forecast {
   margin-top: 20px;
   text-align: center;
+  color: #00ff00;
+}
+
+.forecast-date {
+  font-size: 18px;
+  opacity: 0.5;
+}
+.forcast-mini {
+  opacity: 0.5;
+}
+
+.forcast-temperature {
+  font-size: 14px;
 }
