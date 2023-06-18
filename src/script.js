@@ -21,6 +21,23 @@ function formateDate(timestamp) {
   let day = days[date.getDay()];
   return "${day} ${hours}:${minutes}";
 }
+
+function displayCast() {
+ let castElement = document.querySelector("#cast");
+castElement.innerHTML='
+<div class ="row">
+  <div class="col-2">
+    <div class="forcast-date">Thu</div>
+    <img src="http:openweathermap.org/img/wn/50d@2x.png" alt="" width="43" />
+    <div class="forcast-temperature">
+      <span class="forcast-maxi"> 18° </span>
+      <span class="forcast-mini">12° </span>
+    </div>
+  </div>
+</div>
+';
+}
+
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
@@ -29,6 +46,8 @@ function displayTemperature(response) {
   let airElement = document.querySelector("#air");
   let gdateElement = document.querySelector("#gdate");
   let iconElement = document.querySelector("#icon");
+
+  displayCast();
 
   celsiusTemperature = response.data.main.temp;
 
