@@ -60,8 +60,8 @@ if (index<6){
     </div>
   </div>
 ';
-}
-})
+   }
+});
 castHTML= castHTML+'</div>';
 castElement.innerHTML=castHTML;
  
