@@ -1,12 +1,12 @@
-function formateDate(timestamp) {
-  let date = new Date(timestamp);
-  let hours = timestamp.getHours();
-  if (hours < 10) {
-    hours = "0${hours}";
-  }
-  let minutes = date.getMinutes();
+function formateDate(timestamp){
+    let date =new Date(timestamp);
+    let hours= date.getHours();
+    if (hours < 10) {
+        hours ='0${hours}';
+}
+let minutes = date.getMinutes();
   if (minutes < 10) {
-    minutes = "0${mintues}";
+    minutes = '0${mintues}';
   }
   let days = [
     "Sunday",
@@ -49,8 +49,7 @@ if (index<6){
         (castDay.dt)}</div>
         ${index}
     <img 
-    src="http://openweathermap.org/img/wn/${castDay.weather.[0].icon
-}@2x.png"
+    src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-day.png";
      alt="" 
      width="42" 
      />
@@ -67,8 +66,8 @@ castElement.innerHTML=castHTML;
  
 }
 function getCast(coordinates) {
-let apiKey = "79e8e44340f805883833d9a47487d24b";
-let apiUrl ='https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apikey}&units=metric';
+let apiKey = "e7846e44c0bd21b19tc86a51o0fef236";
+let apiUrl ='https://api.shecodes.io/weather/v1/current?lat=38.71667&lon=-9.13333&key=e7846e44c0bd21b19tc86a51o0fef236&units=metric';
  axios.get(apiUrl).then(displayCast);
 }
 
@@ -93,16 +92,16 @@ function displayTemperature(response) {
   gdateElement.innerHTML = formateDate(response.data.dt * 1000);
   iconElement.setAttribute(
     "src",
-    "http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png"
+    "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-day.png",
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
    
   getCast(response.data.coord);
 }
 function search(city) {
-  let apiKey = "79e8e44340f805883833d9a47487d24b";
-  let apiUrl =
-    "https://api.openweathermap.org/data/2.5/weather?g=${city}&appid=${apiKey}&units=metric";
+  let apiKey = "e7846e44c0bd21b19tc86a51o0fef236";
+  let apiUrl ='https://api.shecodes.io/weather/v1/current?query=Lisbon&key=e7846e44c0bd21b19tc86a51o0fef236&units=metric';
+;
   axios.get(apiUrl).then(displayTemperature);
 }
 
@@ -141,4 +140,4 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
-search("New York");
+search("lisbon");
