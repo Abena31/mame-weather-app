@@ -57,7 +57,7 @@ li:first-letter {
 }
 
 .weather-temperature strong {
-  color: aquamarine;
+  color: black;
   font-weight: 500;
   line-height: 1;
   font-size: 65px;
